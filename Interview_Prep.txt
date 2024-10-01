@@ -1,0 +1,35 @@
+
+People first
+Excellence
+leading change
+Integrity
+co -prosperity
+
+
+GoodAfternoon Sir/Mam, Hello My name is Rishi Chowdhury , and I'm a Computer Science And Engineering graduate from NIT Durgapur. Throughout my academic journey, I've developed a strong interest in Data Structures and Algorithms, as well as Machine Learning. I am a specialist on codeforces and 4* on codechef and actively give  contests on these coding platforms. I also worked as a
+research intern under DR. Sujoy Saha from NIT Durgapur during which I developed a 3D CNN model and a LSTM model for classifying the 8 hand gestures. My most recent internship was with Samsung where I developed a python script to analyze Perfetto trace files for identifying the potential bottlenecks in performance
+
+
+Questions:
+
+explain the workflow of your project ,(code base) 
+run the code and show the website
+why  chose cisco?
+
+
+What tech stack you used in your project and the reason behind it?
+
+used node.js because it has chess.js and chessboard.js library which can be used to render the chessboard on the screen and chess.js for implementing the chess logic  for checking whether a valid move was made or not, for checking checkmate, draw or stalemate
+
+Problems faced while making your project and how you solved it?
+Like i find it difficult to implement the server side logic when a player joins a room which has already another player in it, routing the player to the specific room route which they joined
+
+Are you planning any upgradation in your project?
+
+now the players are joining the another room by manually entering the room code . in the future I intend to use a shareable link which a player can share with the another player so that this player can join the room of the first player 
+
+
+SDLC life cycle (revise)
+
+
+
