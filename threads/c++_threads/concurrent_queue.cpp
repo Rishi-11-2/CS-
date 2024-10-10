@@ -31,7 +31,7 @@ struct Concurrent_Queue {
         q.pop();
 
         ops=false;
-        cv.notify_all();
+        cv.notify_one();
         return c;
 
     }
