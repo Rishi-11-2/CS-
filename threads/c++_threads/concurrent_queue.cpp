@@ -29,7 +29,10 @@ int main() {
     vector<thread> v;
 
     for (int i = 1; i <= (int)(1e4); i++) {
-        v.push_back(thread([&cq, i] { cq.enqueue(i); }));  
+        v.push_back(thread([&cq, i] { 
+            cq.enqueue(i); 
+            }
+        ));  
     }
 
     for (auto &it : v) {
