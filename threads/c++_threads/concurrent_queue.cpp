@@ -17,7 +17,24 @@ struct Concurrent_Queue {
         ops = false;
         cv.notify_all();  
     }
+    int dequeue()
+    {
+        if(sz()==0)
+        return -1;
+        unique_lock<mutex>lock(mtx);
+        cv.wait(lock,[this]{
+            return !ops;
+        });
 
+        ops=true;
+        int c=q.front();
+        q.pop();
+
+        ops=false;
+        cv.notify_all();
+        return c;
+
+    }
     int sz() {
         lock_guard<mutex> lock(mtx);  
         return (int)q.size();
@@ -28,7 +45,7 @@ int main() {
     Concurrent_Queue cq;
     vector<thread> v;
 
-    for (int i = 1; i <= (int)(1e4); i++) {
+    for (int i = 1; i <= (int)(1e2); i++) {
         v.push_back(thread([&cq, i] { 
             cq.enqueue(i); 
             }
@@ -40,6 +57,20 @@ int main() {
     }
 
     cout << cq.sz() << endl;
+    vector<thread>vv;
+    for(int i=1;i<=(int)(1e2)+1;i++)
+    {
+        vv.push_back(thread([&cq]{
+            int cc=cq.dequeue();
 
+            cout<<cc<<endl;
+          }
+        ));
+    }
+    for(auto &it:vv)
+    {
+        it.join();
+    }
+    cout << cq.sz() << endl;
     return 0;
 }
